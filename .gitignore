@@ -1,0 +1,33 @@
+# Editors
+*~
+*.swp
+*.swo
+
+# Python cache artifacts
+*.pyc
+*.pyo
+*.pyd
+*.so
+__pycache__
+__handlers__
+
+# pytest artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Python build-related artifacts
+dist/
+build/
+*.egg-info/
+*.egg/
+*.whl
+
+# OSX
+.DS_Store
+
+# python venv
+.env
+env
+.venv
+venv
