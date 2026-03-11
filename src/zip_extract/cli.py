@@ -3,6 +3,10 @@
 zip_extract.py — Extract files from a zip archive with full path preservation
 and arbitrary character/pattern transformations on output paths.
 
+The primary purpose is to ensure that the UTF-8 character encodings of
+source file paths are respected on output, which are not in Mac OS 26.3.1
+by default.
+
 Transformations are applied in the order they are specified and support:
   - Literal string replacement  (-r / --replace)
   - Regex substitution           (-s / --sub)

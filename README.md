@@ -2,6 +2,14 @@
 
 Extract files from a zip archive with **full path preservation** and a chainable pipeline of output-path transformations — rename segments, substitute characters, change case, and more, all before anything is written to disk.
 
+## Context
+
+The primary purpose is to ensure that the UTF-8 character encodings of source file paths are respected on output, which doesn't seem to be possible with the standard `unzip` included in Mac OS 26.3.1 by default.
+
+While there are probably better ways, including using homebrew to install a better version of `unzip`, I thought I'd play around with claude.ai to see what it could produce and what possible issues it would create.
+
+Initially I believed that I would need to choose individual files and change specific unprocessable characters individually, but it turned out that the characters in the original zip files were good.  As a result I didn't need any of the extra path transformation pipelines, just that the zip file path with UTF-8 charactes be extracted properly.
+
 ## Installation
 
 Clone this repository.
