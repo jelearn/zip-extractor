@@ -99,7 +99,6 @@ class CharMap(Transform):
     def __init__(self, mapping_str: str):
         self.table: dict[str, str] = {}
         for pair in mapping_str.split(","):
-            pair = pair.strip()
             if "=" not in pair:
                 err(f"--map: invalid pair {pair!r}. Expected format: char=char (e.g. a=@)")
             k, v = pair.split("=", 1)
