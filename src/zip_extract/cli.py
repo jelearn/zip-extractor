@@ -270,6 +270,10 @@ def match_entries(all_names: list[str], patterns: list[str]) -> list[str]:
     """Return zip names that match any of the given prefix patterns."""
     matched: list[str] = []
     seen: set[str] = set()
+
+    if not patterns:
+        return all_names
+
     for pat in patterns:
         pat_clean = pat.rstrip("/")
         for name in all_names:
@@ -293,9 +297,6 @@ def extract(args, pipeline: list[Transform]) -> None:
         if args.list:
             list_zip(zf)
             return
-
-        if not args.entry:
-            err("No entries specified. Use -e to select files or directories.")
 
         matched = match_entries(all_names, args.entry)
 
