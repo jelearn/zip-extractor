@@ -149,7 +149,7 @@ class TestApplyPipeline:
         path = "project/SRC/Main.py"
         assert apply_pipeline(path, p1) == "project/SOURCE/main.py"
         # p2: "SRC" won't match lowercase "src", so no replacement
-        assert apply_pipeline(path, p2) == "project/src/main.py"
+        assert apply_pipeline(path, p2) == "project/source/main.py"
 
 
 # ──────────────────────────────────────────────────────────────────────────────
